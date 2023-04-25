@@ -1,0 +1,11 @@
+<section>
+    <h1 class="home-header">Home</h1>
+        {{#each posts as |post|}}
+        <article class="post">
+            {{!-- add username somehow --}}
+            <h2 class="post-title">{{post.title}}</h2>
+            <p class="post-body">{{post.text}}</p>
+            {{!-- add date (Moment.js probs) --}}
+        </article>
+    {{/each}}
+</section>
