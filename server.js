@@ -1,8 +1,7 @@
 const path = require('path');
 const express = require('express');
-const exphbs = require('express-handlebars').create({
-    defaultLayout: 'main'
-  });
+const exphbs = require('express-handlebars');
+const moment = require('moment');
 const session = require('express-session');
 const homeRoutes = require('./controllers/home-routes');
 const authRoutes = require('./controllers/auth-routes');
@@ -29,7 +28,18 @@ const sess = {
 };
 
 app.use(session(sess));
-app.engine('handlebars', exphbs.engine);
+
+// Set up express-handlebars with a custom helper function
+const hbs = exphbs.create({
+  defaultLayout: 'main',
+  helpers: {
+    formatDate: function(date) {
+      return moment(date).format('MMMM Do YYYY, h:mm:ss a');
+    },
+  },
+});
+
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 app.use(express.json());

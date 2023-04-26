@@ -2,10 +2,10 @@
     <h1 class="home-header">Home</h1>
         {{#each posts as |post|}}
         <article class="post">
-            {{!-- add username somehow --}}
+            <h3 class="post-author">{{post.User.username}}</h3>
             <h2 class="post-title">{{post.title}}</h2>
             <p class="post-body">{{post.text}}</p>
-            {{!-- add date (Moment.js probs) --}}
+            <p class="post-date">{{formatDate post.created_at}}</p>
         </article>
     {{/each}}
 </section>

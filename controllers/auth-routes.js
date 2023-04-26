@@ -67,4 +67,18 @@ router.get('/signup', (req, res) => {
     }
   });
   
+  // Define a route for GET requests to /api/users
+router.get('/api/users', async (req, res) => {
+  try {
+    // Fetch all users from the database
+    const users = await User.findAll();
+
+    // Send the users as a JSON response
+    res.json(users);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
   module.exports = router;  

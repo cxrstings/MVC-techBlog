@@ -1,0 +1,42 @@
+[
+    {
+        "title": "Hello World",
+        "text": "Look at my awesome post",
+        "user_id": 1
+    },
+    {
+        "title": "Howdy World",
+        "text": "Look at my different post",
+        "user_id": 2
+    },
+    {
+        "title": "Hola World",
+        "text": "Look at my hecka lit post woot woot",
+        "user_id": 3
+    },
+    {
+        "title": "Goodbye World",
+        "text": "Look at my sad post",
+        "user_id": 4
+    },
+    {
+        "title": "This is not a drill!",
+        "text": "This is a post on a website",
+        "user_id": 5
+    },
+    {
+        "title": "lksajhsdabfgjhbjhasg",
+        "text": "Wow that's a lot of gibberish",
+        "user_id": 6
+    },
+    {
+        "title": "Sad Day",
+        "text": "This house has people in it",
+        "user_id": 6
+    },
+    {
+        "title": "interesting tech post",
+        "text": "Look at my post about technology",
+        "user_id": 5
+    }   
+]
