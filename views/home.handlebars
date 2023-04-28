@@ -1,11 +1,34 @@
 <section>
     <h1 class="home-header">Home</h1>
-        {{#each posts as |post|}}
+    {{#each posts as |post|}}
         <article class="post">
             <h3 class="post-author">{{post.User.username}}</h3>
             <h2 class="post-title">{{post.title}}</h2>
             <p class="post-body">{{post.text}}</p>
             <p class="post-date">{{formatDate post.created_at}}</p>
+            <form class="comment-form">
+                <div class="form-group">
+                    <label for="comment">Leave a comment:</label>
+                    <textarea class="form-control" id="comment" name="comment"></textarea>
+                </div>
+                <input type="hidden" name="post_id" value="{{post.id}}">
+                <input type="hidden" name="user_id" value="{{user.id}}">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            {{#if post.Comments.length}}
+                <h4>Comments:</h4>
+                <ul>
+                    {{#each post.Comments as |comment|}}
+                        <li>
+                            <strong>{{comment.User.username}}</strong>
+                            <span>{{comment.text}}</span>
+                            <span>{{formatDate comment.created_at}}</span>
+                        </li>
+                    {{/each}}
+                </ul>
+            {{else}}
+                <p>No comments yet.</p>
+            {{/if}}
         </article>
     {{/each}}
 </section>
