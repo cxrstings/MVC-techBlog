@@ -5,6 +5,7 @@ const moment = require('moment');
 const session = require('express-session');
 const homeRoutes = require('./controllers/home-routes');
 const authRoutes = require('./controllers/auth-routes');
+const dashRoutes = require('./controllers/dashboard-routes');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -48,6 +49,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(homeRoutes);
 app.use(authRoutes);
+app.use('/dashboard', dashRoutes);
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Now listening on port ${PORT}`));

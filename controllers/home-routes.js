@@ -34,7 +34,7 @@ router.get('/home', async (req, res) => {
     }
 });
 
-router.post('/', async (req, res) => {
+router.post('/home', async (req, res) => {
     try {
       const newComment = await Comment.create({
         ...req.body,

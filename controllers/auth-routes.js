@@ -18,9 +18,12 @@ router.post('/login', async (req, res) => {
     }
   
     req.session.save(() => {
-      req.session.user_id = user.id;
+      req.session.user = {
+        id: user.id,
+        username: user.username,
+      };
       req.session.logged_in = true;
-  
+    
       res.redirect('/');
     });
   } catch (err) {
@@ -52,9 +55,12 @@ router.post('/signup', async (req, res) => {
     });
   
     req.session.save(() => {
-      req.session.user_id = newUser.id;
+      req.session.user = {
+        id: newUser.id,
+        username: newUser.username,
+      };
       req.session.logged_in = true;
-  
+    
       res.redirect('/');
     });
   } catch (err) {

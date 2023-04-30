@@ -12,7 +12,7 @@
                     <textarea class="form-control" id="comment" name="comment"></textarea>
                 </div>
                 <input type="hidden" name="post_id" value="{{post.id}}">
-                <input type="hidden" name="user_id" value="{{user.id}}">
+                <input type="hidden" name="user_id" value="{{req.session.user.id}}">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
             {{#if post.Comments.length}}
@@ -31,4 +31,5 @@
             {{/if}}
         </article>
     {{/each}}
+    <script src="/js/comment.js"></script>
 </section>
