@@ -1,4 +1,19 @@
 {
+  "name": "mvc-techblog",
+  "version": "1.0.0",
+  "description": "Application for creating posts",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm start ",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cxrstings/mvc-techBlog.git"
+  },
+  "author": "Corbin Johns",
+  "license": "MIT",
+  "homepage": "https://github.com/cxrstings/mvc-techBlog#readme",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "connect-session-sequelize": "^7.1.6",
