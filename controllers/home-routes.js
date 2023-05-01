@@ -27,7 +27,7 @@ router.get('/home', async (req, res) => {
 
         const posts = postData.map((post) => post.get({ plain: true }));
 
-        res.render('home', { posts, logged_in: req.session.logged_in });
+        res.render('home', { posts, logged_in: req.session.logged_in, user_id: req.session.user_id });
     } catch (err) {
         console.error(err);
         res.status(500).json(err);
@@ -35,10 +35,12 @@ router.get('/home', async (req, res) => {
 });
 
 router.post('/home', async (req, res) => {
+    console.log(req.body);
     try {
       const newComment = await Comment.create({
-        ...req.body,
-        user_id: req.session.user_id,
+        text: req.body.text,
+        post_id: req.body.post_id,
+        user_id: req.session.user.id,
       });
   
       res.status(200).json(newComment);
