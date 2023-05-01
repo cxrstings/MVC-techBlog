@@ -4,7 +4,7 @@
 
   ## Description
   This application will allow users to share posts about technology, view other's posts, and comment on them!
-
+    ![image](./public/images/Screenshot_1.jpg)
   ### Dashboard
   The dashboard will allow users to view, edit, delete, or create their own posts!
 
